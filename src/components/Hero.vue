@@ -25,7 +25,8 @@ export default {
     align-items: center;
     position: relative;
     overflow: hidden;
-    color: white
+    color: white;
+    z-index: -1;
 }
 p{
     width: 70%;

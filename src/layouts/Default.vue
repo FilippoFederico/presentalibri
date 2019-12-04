@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Nav></Nav>
+        <Nav />
 
         <slot/>
     </div>
@@ -23,4 +23,5 @@
     }
 </script>
 <style>
+
 </style>

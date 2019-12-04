@@ -1,15 +1,15 @@
 <template>
     <nav>
-        <div class="logo">
+        <g-link class="routers" :to="{ name: 'home'}"><div class="logo">
             <p class="logo_name">presentalibri</p>
             <small>libri libri libri libri</small>
-        </div>
+        </div></g-link>
         <div class="munu">
             <button @click="toggleDropdown">menu</button>
             <div class="dropdown" :class="{visible: visible}">
                 <ul>
-                    <li>blog</li>
-                    <li>contatti</li>
+                    <g-link class="routers" :to="{ name: 'about'}"><li>blog</li></g-link>
+                    <g-link class="routers" :to="{ name: 'contatti'}"><li>contatti</li></g-link>
                 </ul>
             </div>
         </div>
@@ -92,5 +92,9 @@ ul{
 li{
     border-bottom: 1px solid gainsboro;
     padding: 8px 0;
+}
+.routers {
+    text-decoration: none;
+    color: black
 }
 </style>

@@ -5,7 +5,7 @@
         <h1>{{ title }}</h1>
         <h3>{{ subtitle }}</h3>
         <hr>
-        <p>{{ text }}</p>
+        <p>{{ text.substr(0, 200) + "..." }}</p>
         <div class="footer_post">
             <p>{{ formattedDate }}</p>
             <p>{{ author }}</p>
