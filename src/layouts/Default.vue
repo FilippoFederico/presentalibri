@@ -1,0 +1,26 @@
+<template>
+    <div>
+        <Nav></Nav>
+
+        <slot/>
+    </div>
+</template>
+
+<static-query>
+    query {
+    metadata {
+    siteName
+    }
+    }
+</static-query>
+<script>
+    import Nav from '../components/Nav'
+
+    export default {
+        components: {
+            Nav
+        }
+    }
+</script>
+<style>
+</style>
