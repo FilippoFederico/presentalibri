@@ -1,6 +1,6 @@
 <template>
     <nav>
-        <g-link class="routers" :to="{ name: 'home'}"><div class="logo">
+        <g-link class="routers" to="/"><div class="logo">
             <p class="logo_name">presentalibri</p>
             <small>libri libri libri libri</small>
         </div></g-link>
@@ -8,8 +8,8 @@
             <button @click="toggleDropdown">menu</button>
             <div class="dropdown" :class="{visible: visible}">
                 <ul>
-                    <g-link class="routers" :to="{ name: 'about'}"><li>blog</li></g-link>
-                    <g-link class="routers" :to="{ name: 'contatti'}"><li>contatti</li></g-link>
+                    <g-link class="routers" to="/about/"><li>blog</li></g-link>
+                    <g-link class="routers" to="/contatti/"><li>contatti</li></g-link>
                 </ul>
             </div>
         </div>

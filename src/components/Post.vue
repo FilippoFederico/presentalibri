@@ -2,27 +2,45 @@
   <div class="post">
     <img :src="image" alt="image" />
     <div class="post_body">
-        <h1>{{ title }}</h1>
+        <h1>{{ title }} {{ id }}</h1>
         <h3>{{ subtitle }}</h3>
         <hr>
         <p>{{ text.substr(0, 200) + "..." }}</p>
         <div class="footer_post">
-            <p>{{ formattedDate }}</p>
-            <p>{{ author }}</p>
+            <p>Pubblicato il: {{ formattedDate }}</p>
+            <p>Autore: {{ author }}</p>
+        </div>
+        <!-- <Bottone @click="details" /> -->
+        <div class="button">
+            <button @click="details">more info</button>
         </div>
     </div>
   </div>
 </template>
 
 <script>
-import dayjs from 'dayjs'
+import dayjs from 'dayjs';
+// import Hero from '@/components/Hero.vue'
 
 export default {
   name: "post",
-  props: ["subtitle", "title", "author", "image", "date", "text"],
+  props: ["subtitle", "title", "author", "image", "date", "text", "id"],
+  data() {
+      return {
+        //   clicked: false
+      }
+  },
+  components: {
+    // Hero
+  },
   computed: {
       formattedDate(){
           return dayjs(this.date).format('DD/MM/YYYY')
+      }
+  },
+  methods: {
+      details() {
+          console.log('id articolo: ', this.id)      
       }
   }
 };
@@ -36,7 +54,7 @@ export default {
     // background: gainsboro;
     box-shadow: 0 0 5px 0 rgba(0,0,0,0.20);
     // border-radius: 10px
-
+    
 }
 .post_body{
     padding: 0 15px 10px 15px;
@@ -64,8 +82,22 @@ h1{
 .footer_post{
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+    // padding: 0 20px;
     
 
 }
+button {
+    border: 1px solid white;
+    width: 60%;
+    height: 40px;
+    justify-content: center
+    
+}
+.button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px
+}
+
 </style>
