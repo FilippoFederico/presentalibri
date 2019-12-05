@@ -46,6 +46,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+
+$base-color: #D0E8F9;
+
 .post{
     // border: 1px solid red;
     
