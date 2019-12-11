@@ -1,18 +1,40 @@
 <template>
     <div class="hero">
         <p>La prima vetrina online La prima vetrina online La prima vetrina online</p>
-        <button>registrati</button>
+        <!-- <button @click="promuoviLibro">promuovi libro</button>
+        <button @click="pubblicaEvento">pubblica evento</button> -->
         <img :src="image" alt="image">
         <div class="overlay"></div>
+        <!-- <div class="FormPromoLibro"><FormPromoLibro class="g"/></div> -->
+        
     </div>
 </template>
 <script>
+
 export default {
     name: 'hero',
-    props: ['image']
+    components: {
+        
+    },
+    props: ['image'],
+    // methods: {
+    //     promuoviLibro(){
+    //         console.log('promuoviLibro()')
+    //     },
+    //     pubblicaEvento(){
+    //         console.log('pubblicaEvento()')
+    //     }
+    // }
 }
 </script>
 <style lang="scss" scoped>
+.FormPromoLibro{
+    // position: relative;
+    // top: 0px
+}
+.g{
+    
+}
 .hero{
     // border: 1px solid red;
     width: 100%;
@@ -26,7 +48,7 @@ export default {
     position: relative;
     overflow: hidden;
     color: white;
-    z-index: -1;
+    // z-index: -1;
 }
 p{
     width: 70%;
@@ -36,9 +58,10 @@ p{
 }
 button{
     background: whitesmoke;
-    border-radius: 10px;
-    padding: 5px 10px;
-    font-size: 12px
+    border-radius: 5px;
+    padding: 5px 20px;
+    font-size: 12px;
+    
 
 }
 img{

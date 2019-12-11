@@ -1,10 +1,28 @@
 <template>
     <layout>
-      <Hero image="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"></Hero>
+      <Hero image="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80">
+      </Hero>
+      <div class="containerBtn">
+        <div @click="showPromoLibro" class="forms">
+          <Bottone textBottone="Promuovi libro" />
+        </div>
+        
+        <div @click="showFormEvento" class="forms">
+          <Bottone textBottone="Pubblica evento" />
+        </div>
+      </div>
+      
+      <!-- <p>click</p> -->
+      <div class="q"><FormPromoLibro v-if="clickedPromoLibro" /></div>
+      
+      <FormEvento v-if="clickedEvento"/>
+      
       <Post v-for="(post, index) in posts" :key="index" v-bind="post" />
     </layout>
 </template>
+
 <script>
+
 const posts = [
   {
     id: 1,
@@ -46,20 +64,49 @@ const posts = [
 
 import Hero from '@/components/Hero.vue'
 import Post from '@/components/Post.vue'
+import Input from '@/components/Input.vue'
+import FormPromoLibro from '@/components/FormPromoLibro.vue'
+import Bottone from '@/components/Bottone.vue'
+import FormEvento from '@/components/FormEvento.vue'
 
     export default {
         name: 'home',
         components: {
           Hero,
-          Post
+          Post,
+          Input,
+          FormPromoLibro,
+          Bottone,
+          FormEvento
         },
+        
         data(){
           return{
-            posts
+            posts,
+            clickedPromoLibro: false,
+            clickedEvento: false
+            
           }
+        },
+        methods: {
+          showPromoLibro() {
+            this.clickedPromoLibro = !this.clickedPromoLibro
+          },
+          showFormEvento() {
+            this.clickedEvento = !this.clickedEvento
+          },
         }
     }
 </script>
 <style lang="scss" scoped>
 
+.containerBtn{
+  padding: 10px;
+  position: relative;
+  // z-index: -1;
+  
+}
+.forms{
+  // margin-bottom: 50px
+}
 </style>>

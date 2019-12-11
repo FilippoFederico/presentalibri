@@ -1,29 +1,41 @@
-<!-- NON USATO -->
-
 <template>
-    <div class="button">
-        <!-- <button>more info</button> -->
+    <div class="bottone">
+        <button :type="typeBottone" :value="valueBottone">{{textBottone}}</button>
     </div>
 </template>
 
 <script>
 export default {
-    name: "bottone"
+    name: 'bottone',
+    props: {
+        textBottone: {
+            type: String,
+            default: 'Click here!'
+        },
+        typeBottone: {
+            type: String
+        },
+        valueBottone: {
+            type: String
+        }
+    }
 }
 </script>
 
 <style lang="scss" scoped>
-button {
-    border: 1px solid white;
-    width: 60%;
-    height: 40px;
-    justify-content: center
+.bottone{
+    // border: 1px solid red;
+    background: gainsboro;
+    // height: 25px;
+    // margin-top: 10px;
+    padding: 10px 10px;
+    text-align: center
     
 }
-.button {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 10px
+button{
+    font-size: 15px;
+    background: transparent;
+    border: none;
+    
 }
 </style>

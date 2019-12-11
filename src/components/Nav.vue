@@ -4,11 +4,14 @@
             <p class="logo_name">presentalibri</p>
             <small>libri libri libri libri</small>
         </div></g-link>
-        <div class="munu">
-            <button @click="toggleDropdown">menu</button>
+        <div class="menu">
+            <div @click="toggleDropdown">
+                <Bottone textBottone="menu" />
+            </div>
+            <!-- <button>menu</button> -->
             <div class="dropdown" :class="{visible: visible}">
                 <ul>
-                    <g-link class="routers" to="/about/"><li>blog</li></g-link>
+                    <g-link class="routers" to="/about/"><li>blog libri</li></g-link>
                     <g-link class="routers" to="/contatti/"><li>contatti</li></g-link>
                 </ul>
             </div>
@@ -16,8 +19,13 @@
     </nav>
 </template>
 <script>
+import Bottone from '@/components/Bottone.vue'
+
     export default {
         name: 'navbar',
+        components: {
+            Bottone
+        },
         data(){
             return {
                 visible: false
@@ -33,6 +41,8 @@
 </script>
 <style lang="scss" scoped>
 
+$box-shadow: 0 0 5px 0 rgba(0,0,0,0.20);
+
 nav{
     // border: 1px solid red;
     display: flex;
@@ -40,6 +50,11 @@ nav{
     align-items: center;
     padding: 0 30px;
     background: whitesmoke;
+    position: sticky;
+    top: 6px;
+    z-index: 2;
+    box-shadow: $box-shadow
+    
 }
 .logo{
     // border: 1px solid red;
@@ -50,7 +65,7 @@ nav{
     padding: 0;
     margin: 0 
 }
-.munu{
+.menu{
     // border: 1px solid red;
     position: relative;
     
@@ -67,9 +82,10 @@ button{
     background: white;
     border-radius: 5px;
     padding: 0 10px;
-    top: 40px;
+    top: 50px;
     box-shadow: 0 0 3px 0 rgba(0,0,0,0.20);
     min-width: 80px;
+    z-index: 1;
 
      &.visible {
         display: block;

@@ -7,12 +7,13 @@
         <hr>
         <p>{{ text.substr(0, 200) + "..." }}</p>
         <div class="footer_post">
-            <p>Pubblicato il: {{ formattedDate }}</p>
-            <p>Autore: {{ author }}</p>
+            <p class="footer_p">Pubblicato il: <br> {{ formattedDate }}</p>
+            <p class="footer_p">Autore: <br> {{ author }}</p>
         </div>
         <!-- <Bottone @click="details" /> -->
-        <div class="button">
-            <button @click="details">more info</button>
+        <div class="button" @click="details">
+                <Bottone textBottone="Dettagli" />
+            <!-- <button>more info</button> -->
         </div>
     </div>
   </div>
@@ -20,7 +21,7 @@
 
 <script>
 import dayjs from 'dayjs';
-// import Hero from '@/components/Hero.vue'
+import Bottone from '@/components/Bottone.vue'
 
 export default {
   name: "post",
@@ -31,7 +32,7 @@ export default {
       }
   },
   components: {
-    // Hero
+    Bottone
   },
   computed: {
       formattedDate(){
@@ -40,7 +41,8 @@ export default {
   },
   methods: {
       details() {
-          console.log('id articolo: ', this.id)      
+          console.log('id articolo: ', this.id)
+          this.$emit('details_card', this.id)    
       }
   }
 };
@@ -57,6 +59,9 @@ $base-color: #D0E8F9;
     // background: gainsboro;
     box-shadow: 0 0 5px 0 rgba(0,0,0,0.20);
     // border-radius: 10px
+    position: relative;
+    top: 0px
+    
     
 }
 .post_body{
@@ -85,22 +90,15 @@ h1{
 .footer_post{
     display: flex;
     justify-content: space-between;
-    // padding: 0 20px;
-    
+}
 
+.footer_p{
+    font-size: 14px
 }
-button {
-    border: 1px solid white;
-    width: 60%;
-    height: 40px;
-    justify-content: center
-    
-}
+
 .button {
-    display: flex;
-    justify-content: center;
     margin-top: 20px;
-    margin-bottom: 10px
+    margin-bottom: 10px;
 }
 
 </style>

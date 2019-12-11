@@ -17,7 +17,7 @@ import Form from '@/components/FormComponent.vue'
 
 export default {
   metaInfo: {
-    title: 'Contatti'
+    title: 'contatti'
   },
   components: {
     Form

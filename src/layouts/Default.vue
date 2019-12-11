@@ -1,8 +1,9 @@
 <template>
     <div>
-        <Nav />
+        <Nav class="nav"/>
 
         <slot/>
+        <Footer />
     </div>
 </template>
 
@@ -15,13 +16,17 @@
 </static-query>
 <script>
     import Nav from '../components/Nav'
+    import Footer from '../components/Footer'
 
     export default {
         components: {
-            Nav
+            Nav,
+            Footer
         }
     }
 </script>
 <style>
-
+.nav{
+    /* position: fixed */
+}
 </style>
