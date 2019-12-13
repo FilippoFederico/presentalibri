@@ -6,25 +6,26 @@
         </div></g-link>
         <div class="menu">
             <div @click="toggleDropdown">
-                <Bottone textBottone="menu" />
+                <ButtonPL textButtonPL="menu" />
             </div>
             <!-- <button>menu</button> -->
             <div class="dropdown" :class="{visible: visible}">
                 <ul>
                     <g-link class="routers" to="/about/"><li>blog libri</li></g-link>
-                    <g-link class="routers" to="/contatti/"><li>contatti</li></g-link>
+                    <g-link class="routers" to="/events/"><li>blog eventi</li></g-link>
+                    <g-link class="routers" to="/contact/"><li>contatti</li></g-link>
                 </ul>
             </div>
         </div>
     </nav>
 </template>
 <script>
-import Bottone from '@/components/Bottone.vue'
+import ButtonPL from '@/components/ButtonPL.vue'
 
     export default {
         name: 'navbar',
         components: {
-            Bottone
+            ButtonPL
         },
         data(){
             return {
@@ -58,7 +59,7 @@ nav{
 }
 .logo{
     // border: 1px solid red;
-    padding: 10px 20px;
+    padding: 10px 0;
 }
 .logo_name{
     font-size: 30px;
@@ -72,7 +73,8 @@ nav{
 }
 button{
     // border: 1px solid red;
-    background: gainsboro;
+    background: LightSlateGray ;
+     
 }
 .dropdown{
     display: none;
@@ -90,7 +92,6 @@ button{
      &.visible {
         display: block;
     }
-
         @media (min-width: 768px){
         position: static;
         display: block;
@@ -102,8 +103,6 @@ ul{
     list-style: none;
     padding: 0;
     width: 100%;
-    
-
 }
 li{
     border-bottom: 1px solid gainsboro;

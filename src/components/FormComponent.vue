@@ -2,63 +2,59 @@
     <div>
         <form action="">
             <div>
-                <Input
+                <InputPL
                 forLabel="firstname"
                 textLabel="Nome"
                 typeInput="text"
                 nameInput="firstname"
                 idInput="firstname"
                 />
-                <!-- <label for="firstname">Nome:</label>
-                <input type="text" name="firstname" id="firstname"> -->
+                
             </div>
             <div>
-                <Input
+                <InputPL
                 forLabel="lastname"
                 textLabel="Cognome"
                 typeInput="text"
                 nameInput="lastname"
                 idInput="lastname"
                 />
-                <!-- <label for="lastname">Cognome:</label>
-                <input type="text" name="lastname" id="lastname"> -->
+   
             </div>
             <div>
-                <Input
+                <InputPL
                 forLabel="mail"
                 textLabel="Mail"
                 typeInput="mail"
                 nameInput="mail"
                 idInput="mail"
                 />
-                <!-- <label for="mail">Mail:</label>
-                <input type="mail" name="mail" id="mail"> -->
+       
             </div>
             <div class="textarea">
                 <label class="label_textarea" for="textarea">Text area:</label>
                 <textarea name="message" rows="10" cols="30" id="textarea"></textarea>
             </div>
                 <div class="button">
-                  <Bottone
-                  textBottone="Submit"
-                  typeBottone="submit"
-                  valueBottone="submit"
+                  <ButtonPL
+                  textButtonPL="Submit"
+                  typeButtonPL="submit"
+                  valueButtonPL="submit"
                   />
-                <!-- <button type="submit" value="Submit">submit</button> -->
             </div>
         </form>
     </div>
 </template>
 
 <script>
-import Input from '@/components/Input.vue'
-import Bottone from '@/components/Bottone.vue'
+import InputPL from '@/components/InputPL.vue'
+import ButtonPL from '@/components/ButtonPL.vue'
 
 export default {
     name: 'form-component',
     components: {
-      Input,
-      Bottone
+      InputPL,
+      ButtonPL
     }
 }
 </script>
@@ -72,10 +68,7 @@ $box-shadow: 0 0 5px 0 rgba(0,0,0,0.20);
 form{
   width: 100%;
 }
-.div_input{
-  // width: 80%;
-  // margin-right: 0;
-}
+
 .form_input{
   margin-right: 0; 
   background: $base-color;
@@ -127,14 +120,11 @@ button {
     margin-bottom: 20px;
 }
 .button {
-  margin-top: 20px;
-    margin-bottom: 10px;
+  padding-top: 20px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: center;
-    
+    background: $base-color
     // background: $base-color
-}
-.button {
-    
 }
 </style>

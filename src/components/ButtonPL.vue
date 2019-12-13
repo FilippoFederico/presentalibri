@@ -1,21 +1,21 @@
 <template>
-    <div class="bottone">
-        <button :type="typeBottone" :value="valueBottone">{{textBottone}}</button>
+    <div class="buttonPL">
+        <button :type="typeButtonPL" :value="valueButtonPL">{{textButtonPL}}</button>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'bottone',
+    name: 'button-pl',
     props: {
-        textBottone: {
+        textButtonPL: {
             type: String,
             default: 'Click here!'
         },
-        typeBottone: {
+        typeButtonPL: {
             type: String
         },
-        valueBottone: {
+        valueButtonPL: {
             type: String
         }
     }
@@ -23,14 +23,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bottone{
-    // border: 1px solid red;
+
+.buttonPL{
     background: gainsboro;
-    // height: 25px;
-    // margin-top: 10px;
+    height: 25px;
     padding: 10px 10px;
-    text-align: center
-    
+    text-align: center;
+    display: flex;
 }
 button{
     font-size: 15px;

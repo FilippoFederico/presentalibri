@@ -10,18 +10,18 @@
             <p class="footer_p">Pubblicato il: <br> {{ formattedDate }}</p>
             <p class="footer_p">Autore: <br> {{ author }}</p>
         </div>
-        <!-- <Bottone @click="details" /> -->
+
         <div class="button" @click="details">
-                <Bottone textBottone="Dettagli" />
-            <!-- <button>more info</button> -->
+                <ButtonPL textButtonPL="Dettagli" />
         </div>
+        
     </div>
   </div>
 </template>
 
 <script>
 import dayjs from 'dayjs';
-import Bottone from '@/components/Bottone.vue'
+import ButtonPL from '@/components/ButtonPL.vue'
 
 export default {
   name: "post",
@@ -32,7 +32,7 @@ export default {
       }
   },
   components: {
-    Bottone
+    ButtonPL
   },
   computed: {
       formattedDate(){
@@ -59,8 +59,8 @@ $base-color: #D0E8F9;
     // background: gainsboro;
     box-shadow: 0 0 5px 0 rgba(0,0,0,0.20);
     // border-radius: 10px
-    position: relative;
-    top: 0px
+    // position: relative;
+    // top: 40px
     
     
 }
@@ -81,7 +81,7 @@ img{
     width: 100%;
     margin-bottom: 10px;
     // border-radius: 10px
-
+    
 }
 h1{
     margin: 0

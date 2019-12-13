@@ -1,21 +1,25 @@
 <template>
     <layout>
-      <Hero image="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80">
-      </Hero>
+      <Hero image="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" />
+
       <div class="containerBtn">
         <div @click="showPromoLibro" class="forms">
-          <Bottone textBottone="Promuovi libro" />
+          <ButtonPL textButtonPL="Promuovi libro" />
+        </div>
+
+        <div class="divFormPromoLibro">
+          <FormPromoLibro v-if="clickedPromoLibro" />
         </div>
         
         <div @click="showFormEvento" class="forms">
-          <Bottone textBottone="Pubblica evento" />
+          <ButtonPL textButtonPL="Pubblica evento" />
         </div>
+
+        <div class="divFormPromoLibro">
+          <FormEvento v-if="clickedEvento"/>
+        </div>
+
       </div>
-      
-      <!-- <p>click</p> -->
-      <div class="q"><FormPromoLibro v-if="clickedPromoLibro" /></div>
-      
-      <FormEvento v-if="clickedEvento"/>
       
       <Post v-for="(post, index) in posts" :key="index" v-bind="post" />
     </layout>
@@ -64,9 +68,9 @@ const posts = [
 
 import Hero from '@/components/Hero.vue'
 import Post from '@/components/Post.vue'
-import Input from '@/components/Input.vue'
+import InputPL from '@/components/InputPL.vue'
 import FormPromoLibro from '@/components/FormPromoLibro.vue'
-import Bottone from '@/components/Bottone.vue'
+import ButtonPL from '@/components/ButtonPL.vue'
 import FormEvento from '@/components/FormEvento.vue'
 
     export default {
@@ -74,9 +78,9 @@ import FormEvento from '@/components/FormEvento.vue'
         components: {
           Hero,
           Post,
-          Input,
+          InputPL,
           FormPromoLibro,
-          Bottone,
+          ButtonPL,
           FormEvento
         },
         
@@ -85,7 +89,6 @@ import FormEvento from '@/components/FormEvento.vue'
             posts,
             clickedPromoLibro: false,
             clickedEvento: false
-            
           }
         },
         methods: {
@@ -98,15 +101,17 @@ import FormEvento from '@/components/FormEvento.vue'
         }
     }
 </script>
+
 <style lang="scss" scoped>
+
+$box-shadow: 0 0 5px 0 rgba(0,0,0,0.20);
 
 .containerBtn{
   padding: 10px;
   position: relative;
-  // z-index: -1;
-  
 }
 .forms{
-  // margin-bottom: 50px
+  margin-top: 10px
 }
+
 </style>>

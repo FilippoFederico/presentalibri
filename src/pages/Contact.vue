@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="contatti">
+    <div>
       <div class="page_presentation">
         <h1>Contatti</h1>
         <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloremque omnis animi, eligendi magni a voluptatum, vitae, consequuntur rerum illum odit fugit assumenda rem dolores inventore iste reprehenderit maxime! Iusto.</p>
@@ -17,7 +17,7 @@ import Form from '@/components/FormComponent.vue'
 
 export default {
   metaInfo: {
-    title: 'contatti'
+    title: 'contact'
   },
   components: {
     Form

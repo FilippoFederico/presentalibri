@@ -54,6 +54,7 @@ input{
     margin-top: 5px;
     margin-bottom: 5px;
     font-size: 15px;
-    border: 1px solid white
+    border: 1px solid white;
+    text-align: center
 }
 </style>
